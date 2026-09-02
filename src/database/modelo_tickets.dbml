@@ -1,0 +1,84 @@
+Table roles {
+  id_rol int [pk, increment]
+  nombre varchar
+}
+
+Table departamentos {
+  id_departamento int [pk, increment]
+  nombre varchar
+}
+
+Table especializaciones {
+  id_especializacion int [pk, increment]
+  nombre varchar
+}
+
+Table usuarios {
+  id_usuario int [pk, increment]
+  nombre varchar
+  apellido varchar
+  telefono varchar
+  correo varchar [unique]
+  contrasena varchar
+  id_rol int [ref: > roles.id_rol]
+  id_departamento int [ref: > departamentos.id_departamento]
+  id_especializacion int [ref: > especializaciones.id_especializacion]
+}
+
+Table equipos_trabajo {
+  id_equipo int [pk, increment]
+  nombre varchar
+}
+
+Table equipo_usuario {
+  id_equipo int [ref: > equipos_trabajo.id_equipo]
+  id_usuario int [ref: > usuarios.id_usuario]
+
+  indexes {
+    (id_equipo, id_usuario) [pk]
+  }
+}
+
+Table inventario_activos {
+  id_activo int [pk, increment]
+  nombre varchar
+  descripcion varchar
+  tipo varchar
+  estado varchar
+  fecha_adquisicion date
+  id_departamento int [ref: > departamentos.id_departamento]
+}
+
+Table estados_ticket {
+  id_estado int [pk, increment]
+  nombre varchar
+}
+
+Table prioridades {
+  id_prioridad int [pk, increment]
+  nombre varchar
+}
+
+Table tickets {
+  id_ticket int [pk, increment]
+  titulo varchar
+  descripcion text
+  id_usuario_creador int [ref: > usuarios.id_usuario]
+  id_usuario_asignado int [ref: > usuarios.id_usuario]
+  id_departamento int [ref: > departamentos.id_departamento]
+  id_equipo int [ref: > equipos_trabajo.id_equipo]
+  id_activo int [ref: > inventario_activos.id_activo]
+  id_estado int [ref: > estados_ticket.id_estado]
+  id_prioridad int [ref: > prioridades.id_prioridad]
+  fecha_creacion datetime
+  fecha_actualizacion datetime
+  fecha_cierre datetime
+}
+
+Table soporte {
+  id_soporte int [pk, increment]
+  id_ticket int [ref: > tickets.id_ticket]
+  id_usuario int [ref: > usuarios.id_usuario]
+  comentario text
+  fecha datetime
+}
