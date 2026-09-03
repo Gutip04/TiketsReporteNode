@@ -2,7 +2,7 @@ import { registerDepartment, deleteDepartment, listDepartment, modifyDepartment,
 
 
 // create Department
-export function Create(req, res) {
+export function create(req, res) {
     registerDepartment(req.body)
         .then((response) => {
             res.status(201).json(response)
