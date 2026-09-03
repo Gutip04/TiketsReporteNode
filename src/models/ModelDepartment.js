@@ -1,8 +1,8 @@
-import { DataTypes, Sequelize } from "sequelize";
+import { DataTypes } from "sequelize";
 import { conn } from "../config/database.js";
 
-export const Specialization = conn.define("Specialization", {
-    id_specialization: {
+export const Department = conn.define("Department", {
+    id_departments: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false

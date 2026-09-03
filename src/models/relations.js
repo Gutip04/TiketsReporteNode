@@ -1,7 +1,8 @@
-import { Department } from "./modelDepartments";
-import { User } from "./modelUser";
-import { Rol } from "./modelRols";
-import { Specialization } from "./modelspecializations";
+import { Department } from "./ModelDepartment.js";
+import { User } from "./ModelUser.js";
+import { Rol } from "./ModelRol.js";
+import { Specialization } from "./ModelSpecialization.js";
+
 
 Rol.hasMany(User, {foreignKey: "id_rol"})
 User.belongsTo(Rol,{foreignKey: "id_rol"})

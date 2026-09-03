@@ -1,8 +1,8 @@
-import { DataTypes, Sequelize } from "sequelize";
+import { DataTypes, } from "sequelize";
 import { conn } from "../config/database.js";
 
-export const Rol = conn.define("Rol", {
-    id_rol: {
+export const Specialization = conn.define("Specialization", {
+    id_specialization: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false
