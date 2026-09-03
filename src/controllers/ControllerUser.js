@@ -2,7 +2,7 @@ import { registerUser, deleteUser, listUser, modifyUser, searchUserByName } from
 
 
 // create User
-export function Create(req, res) {
+export function create(req, res) {
     registerUser(req.body)
         .then((response) => {
             res.status(201).json(response)

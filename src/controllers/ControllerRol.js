@@ -2,7 +2,7 @@ import { registerRol, deleteRol, listRol, modifyRol, searchRolByName } from "../
 
 
 // create Rol
-export function Create(req, res) {
+export function create(req, res) {
     registerRol(req.body)
         .then((response) => {
             res.status(201).json(response)

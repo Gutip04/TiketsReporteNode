@@ -2,7 +2,7 @@ import { registerSpecialization, deleteSpecialization, listSpecialization, modif
 
 
 // create Specialization
-export function Create(req, res) {
+export function create(req, res) {
     registerSpecialization(req.body)
         .then((response) => {
             res.status(201).json(response)
