@@ -18,7 +18,7 @@ export function getSpecialization(data) {
 
 export function updateSpecialization(data, id) {
     return Specialization.update(data, {
-        where: { id_Specialization: id }
+        where: { id_specialization: id }
     })
 }
 
@@ -27,7 +27,7 @@ export function updateSpecialization(data, id) {
 export function deleteSpecialization
 (id) {
     return Specialization.destroy({
-        where: { id_Specialization: id }
+        where: { id_specialization: id }
     })
 }
 
