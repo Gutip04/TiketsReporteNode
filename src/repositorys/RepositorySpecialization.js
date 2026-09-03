@@ -33,8 +33,8 @@ export function deleteSpecialization
 
 
 // Get Specialization for name
-export function getSpecializationName(name) {
+export function getSpecializationName(first_name) {
     return Specialization.findOne({
-        where: { name: name }
+        where: { first_name: first_name }
     })
 }

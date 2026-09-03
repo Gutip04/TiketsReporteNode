@@ -21,15 +21,17 @@ export function modifySpecialization(data, id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
 
-    return updateSpecialization(data)
+    return updateSpecialization(data, id)
 }
 
 
 // delete Specialization
-export function deleteSpecialization(id) {
+export function removeSpecialization(id) {
     if (!id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
+
+    return deleteSpecialization(id)
 }
 
 // search Specialization by Name

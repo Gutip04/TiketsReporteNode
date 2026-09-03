@@ -1,4 +1,4 @@
-import { registerRol, deleteRol, listRol, modifyRol, searchRolByName } from "../services/ServicesRol.js";
+import { registerRol, removeRol, listRol, modifyRol, searchRolByName } from "../services/ServicesRol.js";
 
 
 // create Rol
@@ -25,7 +25,7 @@ export function list(req, res) {
 
 // search one Rol
 export function searchName(req, res) {
-    searchRolByName(req.body.name)
+    searchRolByName(req.params.name)
         .then((response) => {
             res.status(200).json(response)
         })
@@ -39,7 +39,7 @@ export function searchName(req, res) {
 export function update(req, res) {
     modifyRol(req.body, req.params.id)
         .then((response) => {
-            res.status(201).json({ message: "Rol created successfully " })
+            res.status(201).json({ message: "Rol Updated successfully " })
         })
         .catch((error) => {
             res.status(400).json({ error: error.message })
@@ -49,7 +49,7 @@ export function update(req, res) {
 
 // delete Rol
 export function destroy(req, res) {
-    deleteRol(req.params.id)
+    removeRol(req.params.id)
         .then((response) => {
             res.status(201).json({ message: "Rol destroy successfully " })
         })

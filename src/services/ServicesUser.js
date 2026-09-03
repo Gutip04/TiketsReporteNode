@@ -3,7 +3,13 @@ import { createUser, getUser, updateUser, deleteUser, getUserName } from "../rep
 // register one User
 export function registerUser(data) {
 
-    if (!data.name) {
+      if (
+        !data.first_name ||
+        !data.last_name ||
+        !data.phone ||
+        !data.email ||
+        !data.password
+    )  {
         return new Promise.reject(new Error("Incomplete Fields..."))
     }
     return createUser(data)
@@ -21,15 +27,16 @@ export function modifyUser(data, id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
 
-    return updateUser(data)
+    return updateUser(data, id)
 }
 
 
 // delete User
-export function deleteUser(id) {
+export function removeUser(id) {
     if (!id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
+    return deleteUser(id)
 }
 
 // search User by Name

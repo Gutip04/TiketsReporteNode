@@ -1,4 +1,4 @@
-import { registerDepartment, deleteDepartment, listDepartment, modifyDepartment, searchDepartmentByName } from "../services/ServicesDepartment.js";
+import { registerDepartment, removeDepartment, listDepartment, modifyDepartment, searchDepartmentByName } from "../services/ServicesDepartment.js";
 
 
 // create Department
@@ -25,7 +25,7 @@ export function list(req, res) {
 
 // search one Department
 export function searchName(req, res) {
-    searchDepartmentByName(req.body.name)
+    searchDepartmentByName(req.params.name)
         .then((response) => {
             res.status(200).json(response)
         })
@@ -39,7 +39,7 @@ export function searchName(req, res) {
 export function update(req, res) {
     modifyDepartment(req.body, req.params.id)
         .then((response) => {
-            res.status(201).json({ message: "Department created successfully " })
+            res.status(201).json({ message: "Department Update successfully " })
         })
         .catch((error) => {
             res.status(400).json({ error: error.message })
@@ -49,7 +49,7 @@ export function update(req, res) {
 
 // delete Department
 export function destroy(req, res) {
-    deleteDepartment(req.params.id)
+    removeDepartment(req.params.id)
         .then((response) => {
             res.status(201).json({ message: "Department destroy successfully " })
         })

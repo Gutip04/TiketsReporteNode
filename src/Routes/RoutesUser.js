@@ -3,8 +3,10 @@ import { list, create, destroy, searchName, update } from "../controllers/Contro
 const router = Router()
 
 router.get("/user",list)
-router.get("/user/:name",searchName)
+router.get("/user/:first_name",searchName)
 
 router.post("/user",create)
 router.delete("/user/:id",destroy)
 router.patch("/user/:id",update)
+
+export default router

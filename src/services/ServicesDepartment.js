@@ -21,15 +21,18 @@ export function modifyDepartment(data, id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
 
-    return updateDepartment(data)
+    return updateDepartment(data, id)
 }
 
 
 // delete Department
-export function deleteDepartment(id) {
+export function removeDepartment(id) {
     if (!id) {
-        return new Promise.reject(new Error("The ID is required..."))
+        return new Promise.reject("The ID is required...")
     }
+
+    return deleteDepartment(id)
+
 }
 
 // search Department by Name

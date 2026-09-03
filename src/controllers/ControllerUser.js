@@ -1,4 +1,4 @@
-import { registerUser, deleteUser, listUser, modifyUser, searchUserByName } from "../services/ServicesUser.js";
+import { registerUser, removeUser, listUser, modifyUser, searchUserByName } from "../services/ServicesUser.js";
 
 
 // create User
@@ -25,7 +25,7 @@ export function list(req, res) {
 
 // search one User
 export function searchName(req, res) {
-    searchUserByName(req.body.name)
+    searchUserByName(req.params.first_name)
         .then((response) => {
             res.status(200).json(response)
         })
@@ -39,7 +39,7 @@ export function searchName(req, res) {
 export function update(req, res) {
     modifyUser(req.body, req.params.id)
         .then((response) => {
-            res.status(201).json({ message: "User created successfully " })
+            res.status(201).json({ message: "User Updated successfully " })
         })
         .catch((error) => {
             res.status(400).json({ error: error.message })
@@ -49,7 +49,7 @@ export function update(req, res) {
 
 // delete User
 export function destroy(req, res) {
-    deleteUser(req.params.id)
+    removeUser(req.params.id)
         .then((response) => {
             res.status(201).json({ message: "User destroy successfully " })
         })

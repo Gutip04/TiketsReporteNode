@@ -27,8 +27,8 @@ export function deleteUser(id) {
 
 
 // Get User for name
-export function getUserName(name) {
+export function getUserName(first_name) {
     return User.findOne({
-        where: { name: name }
+        where: { first_name: first_name }
     })
 }

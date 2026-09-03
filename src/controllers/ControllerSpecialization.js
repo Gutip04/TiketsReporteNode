@@ -1,4 +1,4 @@
-import { registerSpecialization, deleteSpecialization, listSpecialization, modifySpecialization, searchSpecializationByName } from "../services/ServicesSpecialization.js";
+import { registerSpecialization, removeSpecialization, listSpecialization, modifySpecialization, searchSpecializationByName } from "../services/ServicesSpecialization.js";
 
 
 // create Specialization
@@ -25,7 +25,7 @@ export function list(req, res) {
 
 // search one Specialization
 export function searchName(req, res) {
-    searchSpecializationByName(req.body.name)
+    searchSpecializationByName(req.params.name)
         .then((response) => {
             res.status(200).json(response)
         })
@@ -39,7 +39,7 @@ export function searchName(req, res) {
 export function update(req, res) {
     modifySpecialization(req.body, req.params.id)
         .then((response) => {
-            res.status(201).json({ message: "Specialization created successfully " })
+            res.status(201).json({ message: "Specialization Updated successfully " })
         })
         .catch((error) => {
             res.status(400).json({ error: error.message })
@@ -49,7 +49,7 @@ export function update(req, res) {
 
 // delete Specialization
 export function destroy(req, res) {
-    deleteSpecialization(req.params.id)
+    removeSpecialization(req.params.id)
         .then((response) => {
             res.status(201).json({ message: "Specialization destroy successfully " })
         })

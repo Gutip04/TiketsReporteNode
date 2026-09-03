@@ -8,3 +8,5 @@ router.get("/specialization/:name",searchName)
 router.post("/specialization",create)
 router.delete("/specialization/:id",destroy)
 router.patch("/specialization/:id",update)
+
+export default router

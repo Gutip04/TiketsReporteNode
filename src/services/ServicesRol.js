@@ -21,15 +21,17 @@ export function modifyRol(data, id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
 
-    return updateRol(data)
+    return updateRol(data, id)
 }
 
 
 // delete Rol
-export function deleteRol(id) {
+export function removeRol(id) {
     if (!id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
+
+    return deleteRol(id)
 }
 
 // search Rol by Name
