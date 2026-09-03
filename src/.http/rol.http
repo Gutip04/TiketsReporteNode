@@ -1,0 +1,37 @@
+### Get all roles
+GET http://localhost:3000/api/role
+
+
+###
+
+### Search role by name
+GET http://localhost:3000/api/role/Administrator
+
+
+###
+
+### Create role
+POST http://localhost:3000/api/role
+Content-Type: application/json
+
+{
+    "id_rol" : 1,
+    "name": "Administrator"
+}
+
+
+###
+
+### Delete role by ID
+DELETE http://localhost:3000/api/role/1
+
+
+###
+
+### Update role
+PATCH http://localhost:3000/api/role/1
+Content-Type: application/json
+
+{
+    "name": "admin"
+}
