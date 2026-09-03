@@ -35,7 +35,7 @@ export function searchName(req, res) {
 }
 
 
-// Update Deparment
+// Update Rol
 export function update(req, res) {
     modifyRol(req.body, req.params.id)
         .then((response) => {
@@ -47,7 +47,7 @@ export function update(req, res) {
 }
 
 
-// delete Deparment
+// delete Rol
 export function destroy(req, res) {
     deleteRol(req.params.id)
         .then((response) => {

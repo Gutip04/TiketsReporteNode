@@ -35,7 +35,7 @@ export function searchName(req, res) {
 }
 
 
-// Update Deparment
+// Update Department
 export function update(req, res) {
     modifyDepartment(req.body, req.params.id)
         .then((response) => {
@@ -47,7 +47,7 @@ export function update(req, res) {
 }
 
 
-// delete Deparment
+// delete Department
 export function destroy(req, res) {
     deleteDepartment(req.params.id)
         .then((response) => {

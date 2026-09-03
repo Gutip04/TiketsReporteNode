@@ -35,7 +35,7 @@ export function searchName(req, res) {
 }
 
 
-// Update Deparment
+// Update Specialization
 export function update(req, res) {
     modifySpecialization(req.body, req.params.id)
         .then((response) => {
@@ -47,7 +47,7 @@ export function update(req, res) {
 }
 
 
-// delete Deparment
+// delete Specialization
 export function destroy(req, res) {
     deleteSpecialization(req.params.id)
         .then((response) => {
