@@ -1,4 +1,4 @@
-import { createSpecialization, getSpecialization, updateSpecialization, deleteSpecialization, getSpecializationName } from "../repositorys/RepositorySpecialization";
+import { createSpecialization, getSpecialization, updateSpecialization, deleteSpecialization, getSpecializationName } from "../repositorys/RepositorySpecialization.js";
 
 // register one Specialization
 export function registerSpecialization(data) {

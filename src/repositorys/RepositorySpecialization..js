@@ -1,4 +1,4 @@
-import { Specialization } from "../models/ModelSpecialization"
+import { Specialization } from "../models/ModelSpecialization.js"
 
 
 

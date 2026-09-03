@@ -1,4 +1,4 @@
-import { User } from "../models/ModelUser"
+import { User } from "../models/ModelUser.js"
 // Create User
 export function createUser(data) {
     return User.create(data)

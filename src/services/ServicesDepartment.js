@@ -1,4 +1,4 @@
-import { createDepartment, getDepartment, updateDepartment, deleteDepartment, getDepartmentName } from "../repositorys/RepositoryDepartment";
+import { createDepartment, getDepartment, updateDepartment, deleteDepartment, getDepartmentName } from "../repositorys/RepositoryDepartment.js";
 
 // register one Department
 export function registerDepartment(data) {

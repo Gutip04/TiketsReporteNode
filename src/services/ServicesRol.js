@@ -1,4 +1,4 @@
-import { createRol, getRol, updateRol, deleteRol, getRolName } from "../repositorys/RepositoryRol";
+import { createRol, getRol, updateRol, deleteRol, getRolName } from "../repositorys/RepositoryRol.js";
 
 // register one Rol
 export function registerRol(data) {
