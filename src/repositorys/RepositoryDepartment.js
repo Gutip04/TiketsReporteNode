@@ -12,7 +12,7 @@ export function getDepartment(data) {
 
 
 // Update Department
-export function actualizarUsuario(data, id) {
+export function updateDepartment(data, id) {
     return Department.update(data, {
         where: { id_department: id }
     })

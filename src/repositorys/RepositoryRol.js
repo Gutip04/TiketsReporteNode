@@ -13,7 +13,7 @@ export function getRol(data) {
 
 
 // Update Rol
-export function actualizarUsuario(data, id) {
+export function updateRol(data, id) {
     return Rol.update(data, {
         where: { id_rol: id }
     })
