@@ -29,7 +29,7 @@ export function deleteRol(id) {
 
 // Get rol for name
 export function getRolName(name) {
-    return Usuarios.findOne({
+    return Rol.findOne({
         where: { name: name }
     })
 }
