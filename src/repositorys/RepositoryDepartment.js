@@ -1,4 +1,4 @@
-import { Department } from "../models/ModelDepartment"
+import { Department } from "../models/ModelDepartment.js"
 // Create Department
 export function createDepartment(data) {
     return Department.create(data)

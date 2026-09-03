@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import { conn } from "../config/database.js";
 
 export const Department = conn.define("Department", {
-    id_departments: {
+    id_department: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false

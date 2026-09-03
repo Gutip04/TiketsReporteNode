@@ -1,0 +1,37 @@
+### Get all specializations
+GET http://localhost:3000/api/specialization
+
+
+###
+
+### Search specialization by name
+GET http://localhost:3000/api/specialization/Backend
+
+
+###
+
+### Create specialization
+POST http://localhost:3000/api/specialization
+Content-Type: application/json
+
+{
+    "id_specialization": 1,
+    "name": "Backend"
+}
+
+
+###
+
+### Delete specialization by ID
+DELETE http://localhost:3000/api/specialization/1
+
+
+###
+
+### Update specialization
+PATCH http://localhost:3000/api/specialization/1
+Content-Type: application/json
+
+{
+    "name": "Frontend"
+}

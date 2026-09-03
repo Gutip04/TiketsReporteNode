@@ -19,7 +19,7 @@ export const User = conn.define("User", {
         allowNull: false
     },
     phone : {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email : {
@@ -31,7 +31,7 @@ export const User = conn.define("User", {
         allowNull: false
     }
 }, {
-    timestamps
+    timestamps : true
 }
     
 )
