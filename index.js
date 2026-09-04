@@ -1,6 +1,6 @@
 import express from "express"
 import { conn } from "./src/config/database.js";
-import departemntRoutes from "./src/Routes/RoutesDepartment.js"
+import departmentRoutes from "./src/Routes/RoutesDepartment.js"
 import specializationRoutes from "./src/Routes/RoutesSpecialization.js"
 import rolRoutes from "./src/Routes/RoutesRol.js"
 import userRoutes from "./src/Routes/RoutesUser.js"
@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json())
 
 
-app.use("/api",departemntRoutes)
+app.use("/api",departmentRoutes)
 app.use("/api",specializationRoutes)
 app.use("/api",rolRoutes)
 app.use("/api",userRoutes)

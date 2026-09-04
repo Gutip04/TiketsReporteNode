@@ -5,7 +5,8 @@ export const Specialization = conn.define("Specialization", {
     id_specialization: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true
     },
     name: {
         type: DataTypes.STRING,

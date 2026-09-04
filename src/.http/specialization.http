@@ -15,7 +15,6 @@ POST http://localhost:3000/api/specialization
 Content-Type: application/json
 
 {
-    "id_specialization": 1,
     "name": "Backend"
 }
 
