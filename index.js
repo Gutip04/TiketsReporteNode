@@ -4,6 +4,7 @@ import departemntRoutes from "./src/Routes/RoutesDepartment.js"
 import specializationRoutes from "./src/Routes/RoutesSpecialization.js"
 import rolRoutes from "./src/Routes/RoutesRol.js"
 import userRoutes from "./src/Routes/RoutesUser.js"
+import StatesTicketRoute from "./src/Routes/RoutesStates_ticket.js";
 
 
 const app = express()
@@ -12,6 +13,7 @@ app.use(express.json())
 
 app.use("/api",departemntRoutes)
 app.use("/api",specializationRoutes)
+app.use("/api",StatesTicketRoute)
 app.use("/api",rolRoutes)
 app.use("/api",userRoutes)
 
