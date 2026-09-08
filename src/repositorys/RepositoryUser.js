@@ -1,4 +1,4 @@
-import { User } from "../models/modelUser.js"
+import { User } from "../models/ModelUser.js"
 // Create User
 export function createUser(data) {
     return User.create(data)
@@ -10,7 +10,7 @@ export function getUser(data) {
     return User.findAll(data)
 }
 
-
+    
 // Update User
 export function updateUser(data, id) {
     return User.update(data, {
