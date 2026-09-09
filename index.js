@@ -4,7 +4,7 @@ import departemntRoutes from "./src/Routes/RoutesDepartment.js"
 import specializationRoutes from "./src/Routes/RoutesSpecialization.js"
 import rolRoutes from "./src/Routes/RoutesRol.js"
 import userRoutes from "./src/Routes/RoutesUser.js"
-import { WorkTeam } from "./src/Routes/RoutesWorkTeam.js";
+import WorkTeamRoutes from "./src/Routes/RoutesWorkTeam.js";
 
 
 const app = express()
