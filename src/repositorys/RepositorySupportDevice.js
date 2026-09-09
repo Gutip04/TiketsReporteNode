@@ -16,3 +16,10 @@ export function UpdateDevice(id, data){
         where: {id_device : id}
     })
 }
+
+//Delete Supported Device
+export function DeleteDevice(id){
+    return SupportDevice.destroy({
+        where: {id_device : id}
+    })
+}

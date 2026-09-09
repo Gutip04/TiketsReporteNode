@@ -10,7 +10,6 @@ Content-Type: application/json
     "status" : "Sin arreglo"
 }
 
-
 ###
 
 ### List Support Device
@@ -27,5 +26,11 @@ Content-Type: application/json
 {
     "name" : "Apple"
 }
+
+###
+
+### Delete Support Device
+
+DELETE http://localhost:3000/api/supportDevice/1
 
 ###
