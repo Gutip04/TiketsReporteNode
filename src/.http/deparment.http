@@ -15,7 +15,6 @@ POST http://localhost:3000/api/department
 Content-Type: application/json
 
 {
-    "id_department": 1,
     "name": "Sistemas"
 }
 
@@ -23,7 +22,7 @@ Content-Type: application/json
 ###
 
 ### Eliminar departamento por ID
-DELETE http://localhost:3000/api/department/1
+DELETE http://localhost:3000/api/department/2
 
 
 ###
