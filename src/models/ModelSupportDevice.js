@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { conn } from "../config/database";
+import { conn } from "../config/database.js";
 
 export const SupportDevice = conn.define("SupportDevice" , {
     id_device:{

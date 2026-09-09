@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import { SupportDevice } from "../models/ModelSupportDevice.js";
 
 //Create Supported Device

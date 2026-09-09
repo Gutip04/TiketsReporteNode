@@ -1,0 +1,14 @@
+### Create Support Device
+POST http://localhost:3000/api/supportDevice
+Content-Type: application/json
+
+{
+    "id_device" : "1",
+    "name" : "Lenovo",
+    "description" : "computador dañado",
+    "type" : "computador",
+    "status" : "Sin arreglo"
+}
+
+
+###
