@@ -22,3 +22,10 @@ export function deletePriority(id){
         where: {id_priority: id}
     })
 }
+
+//Get Priority By name 
+export function getPriorityName(name){
+    return priority.findOne({
+        where: {name: name}
+    })
+}
