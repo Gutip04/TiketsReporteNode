@@ -1,6 +1,6 @@
 import express from "express";
 import { conn } from "./src/config/database.js";
-
+import TeamUserroute from "./src/Routes/RoutesTeam_user.js";
 import departmentRoutes from "./src/Routes/RoutesDepartment.js";
 import specializationRoutes from "./src/Routes/RoutesSpecialization.js";
 import rolRoutes from "./src/Routes/RoutesRol.js";
@@ -20,6 +20,7 @@ app.use("/api", StatesTicketRoute);
 app.use("/api", rolRoutes);
 app.use("/api", userRoutes);
 app.use("/api", workTeamRoutes);
+app.use("/api/team_user", TeamUserroute);
 
 
 
