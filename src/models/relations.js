@@ -1,6 +1,7 @@
 import { Department } from "./ModelDepartment.js";
 import { User } from "./ModelUser.js";
 import { Rol } from "./ModelRol.js";
+import { SupportDevice } from "./ModelSupportDevice.js";
 import { Specialization } from "./ModelSpecialization.js";
 
 // guti
@@ -13,7 +14,9 @@ User.belongsTo(Department, {foreignKey: "id_department"})
 Specialization.hasMany(User, {foreignKey: "id_specialization"})
 User.belongsTo(Specialization, {foreignKey: "id_specialization"})
 
-
+//DevePelaez: Relation ModelSupportDevice 
+Department.hasMany(SupportDevice, {foreignKey: "id_department"});
+SupportDevice.belongsTo(Department, {foreignKey: "id_department"});
 
 
 export  {
