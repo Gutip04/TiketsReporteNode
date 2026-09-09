@@ -15,7 +15,6 @@ POST http://localhost:3000/api/role
 Content-Type: application/json
 
 {
-    "id_rol" : 1,
     "name": "Administrator"
 }
 

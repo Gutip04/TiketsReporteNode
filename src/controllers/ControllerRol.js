@@ -1,4 +1,4 @@
-import { registerRol, removeRol, listRol, modifyRol, searchRolByName } from "../services/ServicesRol.js";
+import { registerRol, removeRol, listRol, modifyRol, searchRolByName } from "../services/ServicesRole.js";
 
 
 // create Rol

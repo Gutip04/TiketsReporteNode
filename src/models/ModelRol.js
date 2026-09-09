@@ -5,7 +5,8 @@ export const Rol = conn.define("Rol", {
     id_rol: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true
     },
     name: {
         type: DataTypes.STRING,

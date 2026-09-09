@@ -10,7 +10,7 @@ export function getUser(data) {
     return User.findAll(data)
 }
 
-
+    
 // Update User
 export function updateUser(data, id) {
     return User.update(data, {
