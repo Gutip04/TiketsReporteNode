@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { list, create, destroy, searchName, update } from "../controllers/ControllerPriority";
+import { list, create, destroy, searchName, update } from "../controllers/ControllerPriority.js";
 const router = Router()
 
 router.get("/priority",list)
