@@ -20,3 +20,9 @@ Content-Type: application/json
 }
 
 ###
+
+### Delete WorkTeam by ID
+DELETE http://localhost:3000/api/WorkTeam/1
+
+
+###
