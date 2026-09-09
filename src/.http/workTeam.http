@@ -1,0 +1,36 @@
+### Get all WorkTeam
+
+GET http://localhost:3000/api/WorkTeam
+
+###
+
+### Search WorkTeam by name
+
+GET http://localhost:3000/api/WorkTeam/programadores
+
+###
+
+### Create WorkTeam
+
+POST http://localhost:3000/api/WorkTeam
+Content-Type: application/json
+
+{
+"name": "programadores"
+}
+
+###
+
+### Delete WorkTeam by ID
+DELETE http://localhost:3000/api/WorkTeam/1
+
+
+###
+
+### Update WorkTeam
+PATCH http://localhost:3000/api/WorkTeam/1
+Content-Type: application/json
+
+{
+    "name":"futbol" 
+}

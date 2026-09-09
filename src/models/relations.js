@@ -7,12 +7,12 @@ import { StatesTicket } from "./modelStates_ticket.js";
 Rol.hasMany(User, {foreignKey: "id_rol"})
 User.belongsTo(Rol,{foreignKey: "id_rol"})
 
-Department.hasMany(User, {foreignKey: "id_departament"})
-User.belongsTo(Department, {foreignKey: "id_departament"})
+Department.hasMany(User, {foreignKey: "id_department"})
+User.belongsTo(Department, {foreignKey: "id_department"})
 
 Specialization.hasMany(User, {foreignKey: "id_specialization"})
 User.belongsTo(Specialization, {foreignKey: "id_specialization"})
 
-export  {
+export {
     Rol, Department, User, Specialization, StatesTicket
 }
