@@ -1,4 +1,4 @@
-import { CreateDevice } from "../repositorys/RepositorySupportDevice.js";
+import { CreateDevice, GetDevice } from "../repositorys/RepositorySupportDevice.js";
 
 export function registerSupportDevice(data){
     if(
@@ -13,3 +13,7 @@ export function registerSupportDevice(data){
     return CreateDevice(data)
 };
 
+
+export function listSupportDevice(){
+    return GetDevice()
+}

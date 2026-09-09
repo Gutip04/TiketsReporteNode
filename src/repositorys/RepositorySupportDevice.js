@@ -4,3 +4,8 @@ import { SupportDevice } from "../models/ModelSupportDevice.js";
 export function CreateDevice(data){
     return SupportDevice.create(data)
 }
+
+//Get All Supported Devices
+export function GetDevice(data){
+    return SupportDevice.findAll(data)
+}
