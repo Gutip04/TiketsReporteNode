@@ -1,11 +1,22 @@
 ### Get all WorkTeam
-GET http://localhost:3000/api/WorkTeam
 
+GET http://localhost:3000/api/WorkTeam
 
 ###
 
-### Search user by name
-GET http://localhost:3000/api/user/programadores
+### Search WorkTeam by name
 
+GET http://localhost:3000/api/WorkTeam/programadores
+
+###
+
+### Create WorkTeam
+
+POST http://localhost:3000/api/WorkTeam
+Content-Type: application/json
+
+{
+"name": "programadores"
+}
 
 ###

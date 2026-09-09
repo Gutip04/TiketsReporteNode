@@ -5,7 +5,7 @@ const router = Router()
 router.get("/WorkTeam", list)
 router.get("/WorkTeam/:name", searchName)
 
-router.post("/Work", create)
+router.post("/WorkTeam", create)
 router.delete("/user/:id", destroy)
 router.patch("/user/:id", update)
 
