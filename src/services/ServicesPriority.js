@@ -38,5 +38,5 @@ export function searchPriorityByName(name){
     if(!name){
         return new Promise.reject(new Error("The name is required... "))
     }
-    return getPriority(name)
+    return getPriorityName(name)
 }
