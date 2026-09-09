@@ -43,7 +43,7 @@ router.post(
 
 // Eliminar usuario de equipo
 router.delete(
-    "/team/:id_team/user/:id_user",
+    "/:id_team/:id_user",
     removeUserFromTeamController
 );
 
