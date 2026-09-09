@@ -1,8 +1,8 @@
 import {DataTypes} from "sequelize"
 import {conn} from "../config/database.js"
 
-export const WorkTeam = conn.define("WorkTeam",{
-    id_WorkTeam:{
+export const priority = conn.define("priority",{
+    id_priority:{
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
