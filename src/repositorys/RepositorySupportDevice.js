@@ -9,3 +9,10 @@ export function CreateDevice(data){
 export function GetDevice(data){
     return SupportDevice.findAll(data)
 }
+
+//Update Supported Device
+export function UpdateDevice(id, data){
+    return SupportDevice.update(data,{
+        where: {id_device : id}
+    })
+}

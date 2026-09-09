@@ -1,4 +1,4 @@
-import { CreateDevice, GetDevice } from "../repositorys/RepositorySupportDevice.js";
+import { CreateDevice, GetDevice, UpdateDevice} from "../repositorys/RepositorySupportDevice.js";
 
 export function registerSupportDevice(data){
     if(
@@ -16,4 +16,13 @@ export function registerSupportDevice(data){
 
 export function listSupportDevice(){
     return GetDevice()
+}
+
+
+export function modifySupportDevice(id, data){
+    if(!id){
+        return new Promise.reject(new Error("The ID is required..."));
+    }
+
+    return UpdateDevice(id, data);
 }

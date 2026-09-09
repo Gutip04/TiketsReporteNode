@@ -18,3 +18,14 @@ Content-Type: application/json
 GET http://localhost:3000/api/supportDevice
 
 ###
+
+### Update Support device
+
+PATCH http://localhost:3000/api/supportDevice/1
+Content-Type: application/json
+
+{
+    "name" : "Apple"
+}
+
+###
