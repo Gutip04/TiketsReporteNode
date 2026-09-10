@@ -1,0 +1,38 @@
+### 1. Traer TODO lo de team_user
+GET http://localhost:3000/api/team_user
+
+
+### 2. Ver qué usuarios tiene el equipo 1
+GET http://localhost:3000/api/team_user/team/1
+
+
+### 3. Ver en qué equipos está el usuario 5
+GET http://localhost:3000/api/team_user/user/5
+
+
+### 4. Agregar usuario 5 al equipo 1 - ESTO LLENA LA TABLA
+POST http://localhost:3000/api/team_user
+Content-Type: application/json
+
+{
+  "id_team": 1,
+  "id_user": 5
+}
+
+
+### 5. Agregar usuario 6 al equipo 1
+POST http://localhost:3000/api/team_user
+Content-Type: application/json
+
+{
+  "id_team": 1,
+  "id_user": 6
+}
+
+
+### 6. Sacar usuario 5 del equipo 1
+DELETE http://localhost:3000/api/team_user/1/5
+
+
+### 7. Verificar si el usuario 5 pertenece al equipo 1
+GET http://localhost:3000/api/team_user/team/1/user/5

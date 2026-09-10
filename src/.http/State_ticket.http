@@ -1,0 +1,37 @@
+### Get all states ticket
+GET http://localhost:3000/api/StatesTicket
+
+
+###
+
+### Search states ticket by name
+GET http://localhost:3000/api/StatesTicket/Backend
+
+
+###
+
+### Create states ticket
+POST http://localhost:3000/api/StatesTicket
+Content-Type: application/json
+
+{
+    "id": 2,
+    "name": "open"
+}
+
+
+###
+
+### Delete states ticket by ID
+DELETE http://localhost:3000/api/StatesTicket/1
+
+
+###
+
+### Update states ticket
+PATCH http://localhost:3000/api/StatesTicket/1
+Content-Type: application/json
+
+{
+    "name": "Frontend"
+}
