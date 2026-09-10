@@ -8,3 +8,10 @@ Content-Type: application/json
 }
 
 ###
+
+
+### List Support
+
+GET http://localhost:3000/api/support
+
+###

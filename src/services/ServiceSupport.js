@@ -1,4 +1,4 @@
-import { CreateSupport } from "../repositorys/RepositorySupport.js";
+import { CreateSupport, GetSupport } from "../repositorys/RepositorySupport.js";
 
 export function registerSupport(data){
     if(!data.comment){
@@ -6,4 +6,8 @@ export function registerSupport(data){
     }
 
     return CreateSupport(data);
+}
+
+export function listSupport(){
+    return GetSupport()
 }
