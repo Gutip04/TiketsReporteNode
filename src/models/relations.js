@@ -5,6 +5,8 @@ import { Specialization } from "./ModelSpecialization.js";
 import { StatesTicket } from "./modelStates_ticket.js";
 import { TeamUser } from "./ModelTeam_user.js";
 import { WorkTeam } from "./ModelWorkTeam.js";
+import { SupportDevice } from "./ModelSupportDevice.js";
+import { Support } from "./ModelSupport.js";
 
 Rol.hasMany(User, { foreignKey: "id_rol" });
 User.belongsTo(Rol, { foreignKey: "id_rol" });
@@ -25,6 +27,26 @@ WorkTeam.belongsToMany(User, {
     foreignKey: "id_team"
 });
 
+//Relation DevePelaez SupportDevice
+Department.hasMany(SupportDevice, {
+    foreignKey: "id_departamento"
+});
+SupportDevice.belongsTo(Department, {
+    foreignKey: "id_departamento"
+});
+
+
+//Relation DevePelaez Support
+//User - Support 
+User.hasMany(Support, {
+    foreignKey: "id_user"
+});
+Support.belongsTo(User, {
+    foreignKey: "id_user"
+});
+
+//Ticket - Support
+
 export {
     Rol,
     Department,
@@ -32,5 +54,5 @@ export {
     Specialization,
     StatesTicket,
     TeamUser,
-    WorkTeam
+    WorkTeam,
 };
