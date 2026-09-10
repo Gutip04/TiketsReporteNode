@@ -10,3 +10,9 @@ export function GetSupport(data){
     return Support.findAll(data)
 }
 
+//Update Support
+export function UpdateSupport(id, data){
+    return Support.update(data, {
+        where: {id_support : id}
+    })
+}
