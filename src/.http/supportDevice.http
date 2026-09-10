@@ -1,0 +1,44 @@
+### Create Support Device
+POST http://localhost:3000/api/supportDevice
+Content-Type: application/json
+
+{
+    "id_device" : "2",
+    "name" : "Lenovo",
+    "description" : "computador dañado",
+    "type" : "computador",
+    "status" : "Sin arreglo"
+}
+
+###
+
+### List Support Device
+
+GET http://localhost:3000/api/supportDevice
+
+###
+
+### Update Support device
+
+PATCH http://localhost:3000/api/supportDevice/1
+Content-Type: application/json
+
+{
+    "name" : "Apple"
+}
+
+###
+
+### Delete Support Device By ID
+
+DELETE http://localhost:3000/api/supportDevice/1
+
+###
+
+
+
+### Search Support Device by name
+
+GET http://localhost:3000/api/supportDevice/Lenovo
+
+###
