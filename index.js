@@ -7,13 +7,12 @@ import rolRoutes from "./src/Routes/RoutesRol.js";
 import userRoutes from "./src/Routes/RoutesUser.js";
 import StatesTicketRoute from "./src/Routes/RoutesStates_ticket.js";
 import workTeamRoutes from "./src/Routes/RoutesWorkTeam.js";
+import SupportDeviceRoutes from "./src/Routes/RoutesSupportDevice.js";
 import priorityRoutes from "./src/Routes/RoutesPriority.js"
 
 const app = express();
 
 app.use(express.json());
-
-
 
 // guti
 app.use("/api", departmentRoutes);
@@ -30,7 +29,7 @@ app.use("/api/team_user", TeamUserroute);
 app.use("/api", StatesTicketRoute);
 
 //Pelaez
-// ?????
+app.use("/api", SupportDeviceRoutes);
 
 
 
@@ -38,11 +37,13 @@ const PORT = 3000;
 const SERVER = "http://localhost:";
 const URL = SERVER + PORT;
 
+
 app.listen(PORT, () => {
     console.log(
         "Servidor funcionando de forma correcta. URL: " + URL
     );
 });
+
 
 conn.authenticate()
     .then(() => {
