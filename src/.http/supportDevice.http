@@ -3,7 +3,7 @@ POST http://localhost:3000/api/supportDevice
 Content-Type: application/json
 
 {
-    "id_device" : "1",
+    "id_device" : "2",
     "name" : "Lenovo",
     "description" : "computador dañado",
     "type" : "computador",

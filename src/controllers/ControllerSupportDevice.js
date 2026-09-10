@@ -25,7 +25,7 @@ export function listSD(req, res){
 
 //Update Support Device
 export function UpdateSD(req, res){
-    modifySupportDevice(req.body, req.params.id)
+    modifySupportDevice(req.params.id, req.body)
         .then((response) => {
             return res.status(201).json({message: "Support device Updated successfully"})
         })
