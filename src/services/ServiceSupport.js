@@ -1,4 +1,4 @@
-import { CreateSupport, GetSupport, UpdateSupport, DeleteSupport } from "../repositorys/RepositorySupport.js";
+import { CreateSupport, GetSupport, UpdateSupport, DeleteSupport, GetID } from "../repositorys/RepositorySupport.js";
 
 export function registerSupport(data){
     if(!data.comment){
@@ -28,4 +28,12 @@ export function removeSupport(id){
     }
 
     return DeleteSupport(id);
+}
+
+export function searchSupport(id){
+    if(!id){
+            return new Promise.reject(new Error("The ID is required..."))
+    }
+
+    return GetID(id);
 }

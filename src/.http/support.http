@@ -17,7 +17,7 @@ GET http://localhost:3000/api/support
 ###
 
 
-### Update Support
+### Update Support By ID
 
 PATCH http://localhost:3000/api/support/1
 Content-Type: application/json
@@ -32,5 +32,13 @@ Content-Type: application/json
 ### Delete Support By ID
 
 DELETE http://localhost:3000/api/support/1
+
+###
+
+
+
+### Search Support By ID
+
+GET http://localhost:3000/api/support/1
 
 ###

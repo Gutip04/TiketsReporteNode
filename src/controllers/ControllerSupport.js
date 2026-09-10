@@ -1,4 +1,4 @@
-import { registerSupport, listSupport, modifySupport, removeSupport } from "../services/ServiceSupport.js";
+import { registerSupport, listSupport, modifySupport, removeSupport, searchSupport } from "../services/ServiceSupport.js";
 
 
 //Create Support Device
@@ -36,6 +36,16 @@ export function destroySU(req, res){
     removeSupport(req.params.id)
         .then((response) => {
             return res.status(201).json({message: "Support destroy successfully "})
+        })
+        .catch((error) => {
+            return res.status(400).json({error: error.message})
+        })
+}
+
+export function searchID_SU(req, res){
+    searchSupport(req.params.id)
+        .then((response) => {
+            return res.status(201).json({response})
         })
         .catch((error) => {
             return res.status(400).json({error: error.message})

@@ -23,3 +23,10 @@ export function DeleteSupport(id){
         where: {id_support : id}
     })
 }
+
+//Get Support by ID
+export function GetID(id){
+    return Support.findOne({
+        where: {id_support : id}
+    })
+}
