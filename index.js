@@ -7,6 +7,7 @@ import rolRoutes from "./src/Routes/RoutesRol.js";
 import userRoutes from "./src/Routes/RoutesUser.js";
 import StatesTicketRoute from "./src/Routes/RoutesStates_ticket.js";
 import workTeamRoutes from "./src/Routes/RoutesWorkTeam.js";
+import priorityRoutes from "./src/Routes/RoutesPriority.js"
 
 const app = express();
 
@@ -14,13 +15,22 @@ app.use(express.json());
 
 
 
+// guti
 app.use("/api", departmentRoutes);
 app.use("/api", specializationRoutes);
-app.use("/api", StatesTicketRoute);
 app.use("/api", rolRoutes);
 app.use("/api", userRoutes);
+
+// pacha
 app.use("/api", workTeamRoutes);
+app.use("/api", priorityRoutes)
+
+// cano
 app.use("/api/team_user", TeamUserroute);
+app.use("/api", StatesTicketRoute);
+
+//Pelaez
+// ?????
 
 
 

@@ -1,0 +1,40 @@
+### Get all priority
+
+GET http://localhost:3000/api/priority
+
+###
+
+### Search Priority by name
+
+GET http://localhost:3000/api/Priority/Alta
+
+###
+
+### Create Priority
+
+POST http://localhost:3000/api/priority
+Content-Type: application/json
+
+{
+"name": "Alta"
+}
+
+
+
+
+
+###
+
+### Delete Priority by ID
+DELETE http://localhost:3000/api/priority/1
+
+
+###
+
+### Update WorkTeam
+PATCH http://localhost:3000/api/priority/1
+Content-Type: application/json
+
+{
+    "name":"SUPER ALTA" 
+}
