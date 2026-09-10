@@ -29,4 +29,8 @@ Content-Type: application/json
 ###
 
 
+### Delete Support By ID
+
+DELETE http://localhost:3000/api/support/1
+
 ###

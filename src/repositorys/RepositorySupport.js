@@ -16,3 +16,10 @@ export function UpdateSupport(id, data){
         where: {id_support : id}
     })
 }
+
+//Delete Support
+export function DeleteSupport(id){
+    return Support.destroy({
+        where: {id_support : id}
+    })
+}
