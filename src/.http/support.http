@@ -1,0 +1,44 @@
+### Create Support
+POST http://localhost:3000/api/support
+Content-Type: application/json
+
+{
+    "id_support" : "1",
+    "comment" : "Prueba"
+}
+
+###
+
+
+### List Support
+
+GET http://localhost:3000/api/support
+
+###
+
+
+### Update Support By ID
+
+PATCH http://localhost:3000/api/support/1
+Content-Type: application/json
+
+{
+    "comment" : "PruebaAprobada"
+}
+
+###
+
+
+### Delete Support By ID
+
+DELETE http://localhost:3000/api/support/1
+
+###
+
+
+
+### Search Support By ID
+
+GET http://localhost:3000/api/support/1
+
+###
