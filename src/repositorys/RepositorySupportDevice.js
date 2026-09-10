@@ -23,3 +23,10 @@ export function DeleteDevice(id){
         where: {id_device : id}
     })
 }
+
+//Get Supported Device by name
+export function GetDeviceName(name){
+    return SupportDevice.findOne({
+        where: {name : name}
+    })
+}

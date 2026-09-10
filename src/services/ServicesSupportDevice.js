@@ -35,3 +35,12 @@ export function removeSupportDevice(id){
     
         return DeleteDevice(id)
 }
+
+
+export function searchSupportDevice(name){
+    if(!name){
+        return new Promise.reject(new Error("The name is required..."));
+    }
+
+    return GetDeviceName(name);
+}

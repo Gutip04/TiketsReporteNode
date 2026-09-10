@@ -1,4 +1,4 @@
-import { registerSupportDevice, listSupportDevice, modifySupportDevice, removeSupportDevice} from "../services/ServicesSupportDevice.js"
+import { registerSupportDevice, listSupportDevice, modifySupportDevice, removeSupportDevice, searchSupportDevice} from "../services/ServicesSupportDevice.js"
 
 
 //Create Support Device
@@ -25,7 +25,7 @@ export function listSD(req, res){
 
 //Update Support Device
 export function UpdateSD(req, res){
-    modifySupportDevice(req.body)
+    modifySupportDevice(req.body, req.params.id)
         .then((response) => {
             return res.status(201).json({message: "Support device Updated successfully"})
         })
@@ -45,3 +45,12 @@ export function destroySD(req, res){
         })
 }
 
+export function searchNameSD(req, res){
+    searchSupportDevice(req.params.name)
+        .then((response) => {
+            return res.status(201).json({response})
+        })
+        .catch((error) => {
+            return res.status(400).json({ error: error.message })
+        })
+}
