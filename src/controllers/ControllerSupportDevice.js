@@ -36,7 +36,7 @@ export function UpdateSD(req, res){
 
 //Delete Support Device
 export function destroySD(req, res){
-    removeSupportDevice(req.body)
+    removeSupportDevice(req.params.id)
         .then((response) => {
             return res.status(201).json({message: "User destroy successfully "})
         })
@@ -44,3 +44,4 @@ export function destroySD(req, res){
             return res.status(400).json({error: error.message})
         })
 }
+

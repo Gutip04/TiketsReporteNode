@@ -1,4 +1,4 @@
-import { CreateDevice, GetDevice, UpdateDevice, DeleteDevice} from "../repositorys/RepositorySupportDevice.js";
+import { CreateDevice, GetDevice, UpdateDevice, DeleteDevice, GetDeviceName} from "../repositorys/RepositorySupportDevice.js";
 
 export function registerSupportDevice(data){
     if(
@@ -29,9 +29,9 @@ export function modifySupportDevice(id, data){
 
 
 export function removeSupportDevice(id){
-    if(!id){
-        return new Promise.reject(new Error("The ID is required..."))
-    }
-
-    return DeleteDevice(id);
+    if (!id) {
+            return new Promise.reject(new Error("The ID is required..."))
+        }
+    
+        return DeleteDevice(id)
 }

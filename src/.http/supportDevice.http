@@ -29,8 +29,15 @@ Content-Type: application/json
 
 ###
 
-### Delete Support Device
+### Delete Support Device By ID
 
 DELETE http://localhost:3000/api/supportDevice/1
+
+###
+
+
+### Search Support Device by name
+
+GET http://localhost:3000/api/supportDevice/Apple
 
 ###
