@@ -1,4 +1,4 @@
-import { registerSupportDevice, listSupportDevice, modifySupportDevice} from "../services/ServicesSupportDevice.js"
+import { registerSupportDevice, listSupportDevice, modifySupportDevice, removeSupportDevice} from "../services/ServicesSupportDevice.js"
 
 
 //Create Support Device
@@ -33,3 +33,15 @@ export function UpdateSD(req, res){
             return res.status(400).json({error: error.message})
         })
 }
+
+//Delete Support Device
+export function destroySD(req, res){
+    removeSupportDevice(req.params.id)
+        .then((response) => {
+            return res.status(201).json({message: "User destroy successfully "})
+        })
+        .catch((error) => {
+            return res.status(400).json({error: error.message})
+        })
+}
+
