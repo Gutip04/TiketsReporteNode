@@ -1,0 +1,10 @@
+### Create Support
+POST http://localhost:3000/api/support
+Content-Type: application/json
+
+{
+    "id_support" : "1",
+    "comment" : "Prueba"
+}
+
+###
