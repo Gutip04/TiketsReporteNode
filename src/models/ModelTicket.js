@@ -19,16 +19,10 @@ export const Ticket = conn.define("tickets", {
         allowNull: true
     },
 
-    status:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: "Pendiente"
-    },
-
     id_creator_user: {
         type: DataTypes.INTEGER,
         references: {
-            model: "User",
+            model: "Users",
             key: "id_user"
         }
     },
@@ -36,7 +30,7 @@ export const Ticket = conn.define("tickets", {
     id_assigned_user: {
         type: DataTypes.INTEGER,
         references: {
-            model: "User",
+            model: "Users",
             key: "id_user"
         }
     },
@@ -45,7 +39,7 @@ export const Ticket = conn.define("tickets", {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: "department",
+            model: "Departments",
             key: "id_department"
         }
     },
@@ -54,7 +48,7 @@ export const Ticket = conn.define("tickets", {
         type: DataTypes.INTEGER,
         allowNull:false,
         references: {
-            model: "WorkTeam",
+            model: "WorkTeams",
             key: "id_WorkTeam"
         }
     },
@@ -63,7 +57,7 @@ export const Ticket = conn.define("tickets", {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: "SupportDevice",
+            model: "SupportDevices",
             key: "id_device"
         }
     },
@@ -72,7 +66,7 @@ export const Ticket = conn.define("tickets", {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: "states_ticket",
+            model: "states_tickets",
             key: "id"
         }
     }, 
@@ -81,14 +75,14 @@ export const Ticket = conn.define("tickets", {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: "priority",
+            model: "priorities",
             key: "id_priority"
         }
     },
 
     closedAt: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
 },{
     timestamps: true
