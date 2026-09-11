@@ -15,20 +15,20 @@ export function createSU(req, res){
 export function listSU(req, res){
     listSupport(req.body)
         .then((response) => {
-            return res.status(201).json(response)
+            return res.status(200).json(response)
         })
         .catch((error) => {
-            return res.status(400).json({error: error.message})
+            return res.status(500).json({error: error.message})
         })
 }
 
 export function UpdateSU(req, res){
     modifySupport(req.params.id, req.body)
         .then((response) => {
-            return res.status(201).json({message: "Support Updated successfully"})
+            return res.status(200).json({message: "Support Updated successfully"})
         })
         .catch((error) => {
-            return res.status(400).json({error: error.message})
+            return res.status(500).json({error: error.message})
         })
 }
 

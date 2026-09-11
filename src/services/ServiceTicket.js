@@ -1,4 +1,4 @@
-import { CreateTicket } from "../repositorys/RepositoryTicket.js";
+import { CreateTicket, GetTicket } from "../repositorys/RepositoryTicket.js";
 
 export function RegisterTicket(data){
     if(!data.title){
@@ -6,4 +6,8 @@ export function RegisterTicket(data){
     }
 
     return CreateTicket(data);
+}
+
+export function listTicket(){
+    return GetTicket();
 }
