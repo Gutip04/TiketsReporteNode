@@ -16,6 +16,7 @@ POST http://localhost:3000/api/priority
 Content-Type: application/json
 
 {
+"id_priority" : "1",
 "name": "Alta"
 }
 

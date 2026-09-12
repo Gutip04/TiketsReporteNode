@@ -1,0 +1,46 @@
+### Create Ticket
+
+POST http://localhost:3000/api/ticket
+Content-Type: application/json
+
+{
+    "title" : "ComputadorPrueba2",
+    "id_department" : "1",
+    "id_WorkTeam" : "1",
+    "id_device" : "2",
+    "id_statusTicket": "1",
+    "id_priority" : "1"
+}
+
+### 
+
+### Get All tickets
+
+GET http://localhost:3000/api/ticket
+
+###
+
+### Update ticket
+
+PATCH http://localhost:3000/api/ticket/5
+Content-Type: application/json
+
+{
+    "title" : "ComputadorActualizado"
+}
+
+###
+
+
+### Delete ticket
+
+DELETE http://localhost:3000/api/ticket/5
+
+###
+
+
+### Search tiket By ID
+
+GET http://localhost:3000/api/ticket/6
+
+###

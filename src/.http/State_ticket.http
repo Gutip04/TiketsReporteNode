@@ -15,7 +15,7 @@ POST http://localhost:3000/api/StatesTicket
 Content-Type: application/json
 
 {
-    "id": 2,
+    "id": "1",
     "name": "open"
 }
 

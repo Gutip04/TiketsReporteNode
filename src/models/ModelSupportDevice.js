@@ -4,6 +4,7 @@ import { conn } from "../config/database.js";
 export const SupportDevice = conn.define("SupportDevice" , {
     id_device:{
         type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
         allowNull: false
     },
