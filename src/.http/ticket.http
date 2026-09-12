@@ -20,3 +20,13 @@ GET http://localhost:3000/api/ticket
 
 ###
 
+### Update ticket
+
+PATCH http://localhost:3000/api/ticket/5
+Content-Type: application/json
+
+{
+    "title" : "ComputadorActualizado"
+}
+
+###

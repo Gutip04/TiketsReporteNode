@@ -1,5 +1,5 @@
 import { response } from "express";
-import { RegisterTicket, listTicket } from "../services/ServiceTicket.js";
+import { RegisterTicket, listTicket, modifyTicket } from "../services/ServiceTicket.js";
 
 export function CreateTI(req, res) {
     RegisterTicket(req.body)
@@ -18,5 +18,15 @@ export function listTI(req, res) {
         })
         .catch((error) => {
             res.status(500).json({error: error.message})
+        })
+}
+
+export function updateTI(req, res) {
+    modifyTicket(req.body, req.params.id)
+        .then((response) => {
+            res.status(201).json({ message: "User Updated successfully "})        
+        })
+        .catch((error) => {
+            res.status(400).json({error: error.message})
         })
 }

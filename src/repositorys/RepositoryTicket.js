@@ -10,3 +10,10 @@ export function GetTicket(data){
     return Ticket.findAll(data)
 }
 
+//Upsate Ticket
+export function UpdateTicket(data, id) {
+    return Ticket.update(data, {
+        where: {id_ticket: id}
+    })
+}
+
