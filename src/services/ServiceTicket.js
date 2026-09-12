@@ -1,4 +1,4 @@
-import { CreateTicket, GetTicket, UpdateTicket, DeleteTicket } from "../repositorys/RepositoryTicket.js";
+import { CreateTicket, GetTicket, UpdateTicket, DeleteTicket, GetID } from "../repositorys/RepositoryTicket.js";
 
 export function RegisterTicket(data){
     if(!data.title){
@@ -26,4 +26,11 @@ export function removeTicket(id){
     }
 
     return DeleteTicket(id)
+}
+
+export function searchByID(id){
+    if(!id){
+        return new Promise.reject(new Error("The ID is required..."))
+    }
+    return GetID(id)
 }

@@ -38,3 +38,9 @@ DELETE http://localhost:3000/api/ticket/5
 
 ###
 
+
+### Search tiket By ID
+
+GET http://localhost:3000/api/ticket/6
+
+###

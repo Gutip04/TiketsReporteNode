@@ -1,5 +1,5 @@
 import { response } from "express";
-import { RegisterTicket, listTicket, modifyTicket, removeTicket } from "../services/ServiceTicket.js";
+import { RegisterTicket, listTicket, modifyTicket, removeTicket, searchByID } from "../services/ServiceTicket.js";
 
 export function CreateTI(req, res) {
     RegisterTicket(req.body)
@@ -38,5 +38,15 @@ export function destroyTI(req, res) {
         })
         .catch((error) => {
             res.status(400).json({error: error.message})
+        })
+}
+
+export function searchId_TI(req, res){
+    searchByID(req.params.id)
+        .then((response) => {
+            res.status(200).json(response)
+        })
+        .catch((error) => {
+            res.status(500).json({ error: error.message })
         })
 }
