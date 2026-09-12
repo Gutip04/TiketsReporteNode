@@ -1,5 +1,5 @@
 import { response } from "express";
-import { RegisterTicket, listTicket, modifyTicket } from "../services/ServiceTicket.js";
+import { RegisterTicket, listTicket, modifyTicket, removeTicket } from "../services/ServiceTicket.js";
 
 export function CreateTI(req, res) {
     RegisterTicket(req.body)
@@ -25,6 +25,16 @@ export function updateTI(req, res) {
     modifyTicket(req.body, req.params.id)
         .then((response) => {
             res.status(201).json({ message: "User Updated successfully "})        
+        })
+        .catch((error) => {
+            res.status(400).json({error: error.message})
+        })
+}
+
+export function destroyTI(req, res) {
+    removeTicket(req.params.id)
+        .then((response) => {
+            res.status(201).json({ message: "User destroy successfully " })
         })
         .catch((error) => {
             res.status(400).json({error: error.message})

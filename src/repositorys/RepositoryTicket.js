@@ -17,3 +17,8 @@ export function UpdateTicket(data, id) {
     })
 }
 
+export function DeleteTicket(id) {
+    return Ticket.destroy({
+        where: {id_ticket : id}
+    })
+}
