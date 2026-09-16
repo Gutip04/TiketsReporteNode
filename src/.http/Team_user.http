@@ -1,38 +1,46 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6MSwiaWF0IjoxNzg5NTQwNjIwLCJleHAiOjE3ODk1NDc4MjB9.y7uIxYZTf_UHd8PvIiGahhc8Q421UHCKgFE_hw1u0II
+
+
 ### 1. Traer TODO lo de team_user
 GET http://localhost:3000/api/team_user
+Authorization: Bearer {{token}}
 
 
 ### 2. Ver qué usuarios tiene el equipo 1
-GET http://localhost:3000/api/team_user/team/1
+GET http://localhost:3000/api/team_user/team/2
+Authorization: Bearer {{token}}
 
 
 ### 3. Ver en qué equipos está el usuario 5
 GET http://localhost:3000/api/team_user/user/5
+Authorization: Bearer {{token}}
 
 
-### 4. Agregar usuario 5 al equipo 1 - ESTO LLENA LA TABLA
+### 4. Agregar usuario 5 al equipo 1
 POST http://localhost:3000/api/team_user
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "id_team": 1,
   "id_user": 5
 }
 
-
-### 5. Agregar usuario 6 al equipo 1
+### 5. Agregar usuario 6 al equipo 1 - SOLO ADMIN
 POST http://localhost:3000/api/team_user
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "id_team": 1,
   "id_user": 6
 }
 
-
-### 6. Sacar usuario 5 del equipo 1
+### 6. Sacar usuario 5 del equipo 1 - SOLO ADMIN
 DELETE http://localhost:3000/api/team_user/1/5
+Authorization: Bearer {{token}}
 
 
 ### 7. Verificar si el usuario 5 pertenece al equipo 1
 GET http://localhost:3000/api/team_user/team/1/user/5
+Authorization: Bearer {{token}}

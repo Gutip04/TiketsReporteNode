@@ -1,41 +1,41 @@
-### Get all priority
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6MSwiaWF0IjoxNzg5NTM3Mjg1LCJleHAiOjE3ODk1NDQ0ODV9.QisZwa16xWV0aBYpqrpEUrOlet_7Scn-plTW7zFAIX4
 
+
+### Get all priority
 GET http://localhost:3000/api/priority
+Authorization: Bearer {{token}}
+
 
 ###
 
 ### Search Priority by name
+GET http://localhost:3000/api/priority/Alta
+Authorization: Bearer {{token}}
 
-GET http://localhost:3000/api/Priority/Alta
 
 ###
 
 ### Create Priority
-
 POST http://localhost:3000/api/priority
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-"id_priority" : "1",
-"name": "Alta"
-}
-
-
-
-
-
-###
+    "name": "Alta"
+} 
 
 ### Delete Priority by ID
 DELETE http://localhost:3000/api/priority/1
+Authorization: Bearer {{token}}
 
 
 ###
 
-### Update WorkTeam
+### Update Priority
 PATCH http://localhost:3000/api/priority/1
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-    "name":"SUPER ALTA" 
+    "name": "SUPER ALTA"
 }

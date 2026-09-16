@@ -1,37 +1,45 @@
-### Get all WorkTeam
+```http
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6MSwiaWF0IjoxNzg5NTM3Njg4LCJleHAiOjE3ODk1NDQ4ODh9.j_p_AIKnPuLlpJuhEMWJ5HwAqZy3_cwCmZk26-QbzAQ
 
+
+### Get all WorkTeam
 GET http://localhost:3000/api/WorkTeam
+Authorization: Bearer {{token}}
+
 
 ###
 
 ### Search WorkTeam by name
-
 GET http://localhost:3000/api/WorkTeam/programadores
+Authorization: Bearer {{token}}
+
 
 ###
 
 ### Create WorkTeam
-
 POST http://localhost:3000/api/WorkTeam
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-"id_WorkTeam" : "1",
-"name": "programadores"
+    "name": "programadores"
 }
+
 
 ###
 
 ### Delete WorkTeam by ID
-DELETE http://localhost:3000/api/WorkTeam/1
+DELETE http://localhost:3000/api/WorkTeam/8
+Authorization: Bearer {{token}}
 
 
 ###
 
 ### Update WorkTeam
-PATCH http://localhost:3000/api/WorkTeam/1
+PATCH http://localhost:3000/api/WorkTeam/5
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-    "name":"futbol" 
+    "name": "futbol"
 }

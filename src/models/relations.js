@@ -123,6 +123,14 @@ Ticket.belongsTo(priority, {
     foreignKey: "id_priority"
 })
 
+TeamUser.belongsTo(WorkTeam, {
+    foreignKey: "id_WorkTeam"
+});
+
+TeamUser.belongsTo(User, {
+    foreignKey: "id_user"
+});
+
 export {
     Rol,
     Department,

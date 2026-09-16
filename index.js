@@ -12,6 +12,7 @@ import SupportRoutes from "./src/Routes/RoutesSupport.js";
 import priorityRoutes from "./src/Routes/RoutesPriority.js"
 import TicketRoutes from "./src/Routes/RoutesTicket.js"
 import authRoutes from "./src/Routes/RoutesAuth.js"
+import teamUserRoutes from "./src/Routes/RoutesTeam_user.js";
 import "./src/models/relations.js"
 
 
@@ -31,7 +32,8 @@ app.use("/api", userRoutes);
 
 // pacha
 app.use("/api", workTeamRoutes);
-app.use("/api", priorityRoutes)
+app.use("/api", priorityRoutes);
+app.use("/api/team_user", teamUserRoutes);
 
 // cano
 app.use("/api", StatesTicketRoute);
