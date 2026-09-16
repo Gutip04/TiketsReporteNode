@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import { authenticate } from "../middlewares/auth.middleware.js";
 import {
     getTeamUsersController,
     getUsersByTeamController,
@@ -10,6 +10,9 @@ import {
 } from "../controllers/ControllerTeam_user.js";
 
 const router = Router();
+
+router.use(authenticate)
+
 
 // Obtener todas las relaciones usuario-equipo
 router.get(
@@ -43,7 +46,7 @@ router.post(
 
 // Eliminar usuario de equipo
 router.delete(
-    "/:id_team/:id_user",
+    "/team-users/:id_team/:id_user",
     removeUserFromTeamController
 );
 

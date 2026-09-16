@@ -25,14 +25,14 @@ User.belongsTo(Specialization, { foreignKey: "id_specialization" });
 WorkTeam.belongsToMany(User, {
     through: TeamUser,
     foreignKey: "id_WorkTeam",
-    otherKey: "id_user"
+    otherKey: "id_user",
 });
 
 //Foreign key User
 User.belongsToMany(WorkTeam, {
     through: TeamUser,
     foreignKey: "id_user",
-    otherKey: "id_WorkTeam"
+    otherKey: "id_WorkTeam",
 });
 
 //Relation DevePelaez SupportDevice
@@ -57,7 +57,7 @@ Support.belongsTo(User, {
 Ticket.hasMany(Support, {
     foreignKey: "id_ticket"
 });
-Ticket.belongsTo(Support,{
+Support.belongsTo(Ticket,{
     foreignKey: "id_ticket"
 });
 
