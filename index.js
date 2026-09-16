@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from "express";
 import { conn } from "./src/config/database.js";
 import departmentRoutes from "./src/Routes/RoutesDepartment.js";
@@ -10,13 +11,20 @@ import SupportDeviceRoutes from "./src/Routes/RoutesSupportDevice.js";
 import SupportRoutes from "./src/Routes/RoutesSupport.js";
 import priorityRoutes from "./src/Routes/RoutesPriority.js"
 import TicketRoutes from "./src/Routes/RoutesTicket.js"
+import authRoutes from "./src/Routes/RoutesAuth.js"
+import teamUserRoutes from "./src/Routes/RoutesTeam_user.js";
 import "./src/models/relations.js"
+
 
 const app = express();
 
+dotenv.config();
 app.use(express.json());
 
 // guti
+////Ruta de Autentificacion /////
+app.use("/auth", authRoutes);
+// //////////////////////////////
 app.use("/api", departmentRoutes);
 app.use("/api", specializationRoutes);
 app.use("/api", rolRoutes);
@@ -24,7 +32,8 @@ app.use("/api", userRoutes);
 
 // pacha
 app.use("/api", workTeamRoutes);
-app.use("/api", priorityRoutes)
+app.use("/api", priorityRoutes);
+app.use("/api/team_user", teamUserRoutes);
 
 // cano
 app.use("/api", StatesTicketRoute);
@@ -49,7 +58,7 @@ app.listen(PORT, () => {
 
 
 conn.authenticate()
-    .then(() => {
+    .then(async() => {
         return conn.sync({alter: true});
     })
     .catch((error) => {
