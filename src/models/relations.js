@@ -1,3 +1,4 @@
+
 import { Department } from "./ModelDepartment.js";
 import { User } from "./ModelUser.js";
 import { Rol } from "./ModelRol.js";
@@ -10,42 +11,45 @@ import { Ticket } from "./ModelTicket.js";
 import { priority } from "./ModelPriority.js";
 import { TeamUser } from "./ModelTeamUser.js";
 
+// Relación Rol - User
 Rol.hasMany(User, { foreignKey: "id_rol" });
 User.belongsTo(Rol, { foreignKey: "id_rol" });
 
+// Relación Department - User
 Department.hasMany(User, { foreignKey: "id_department" });
 User.belongsTo(Department, { foreignKey: "id_department" });
 
+
+// Relación Specialization - User
 Specialization.hasMany(User, { foreignKey: "id_specialization" });
 User.belongsTo(Specialization, { foreignKey: "id_specialization" });
 
 
-//Correct TeamUser relationship
-//Foreign key WorkTeam
+// Correct TeamUser relationship
 WorkTeam.belongsToMany(User, {
     through: TeamUser,
     foreignKey: "id_WorkTeam",
     otherKey: "id_user"
 });
 
-//Foreign key User
+
+
 User.belongsToMany(WorkTeam, {
     through: TeamUser,
     foreignKey: "id_user",
     otherKey: "id_WorkTeam"
 });
 
-//Relation DevePelaez SupportDevice
+
+// Relación Department - SupportDevice
 Department.hasMany(SupportDevice, {
-    foreignKey: "id_departamento"
+        foreignKey: "id_department"
 });
 SupportDevice.belongsTo(Department, {
-    foreignKey: "id_departamento"
+    foreignKey: "id_department"
 });
 
-
-//Relations Support (Branch : DevePelaez)
-//User - Support 
+// Relación User - Support
 User.hasMany(Support, {
     foreignKey: "id_user"
 });
@@ -53,17 +57,15 @@ Support.belongsTo(User, {
     foreignKey: "id_user"
 });
 
-//Ticket - Support
+// Relación Ticket - Support
 Ticket.hasMany(Support, {
     foreignKey: "id_ticket"
 });
-Ticket.belongsTo(Support,{
+Support.belongsTo(Ticket, {
     foreignKey: "id_ticket"
 });
 
-
-//Relations Ticket (Branch : DevePelaez)
-//Creator_User - Ticket
+// Relaciones Ticket
 User.hasMany(Ticket, {
     foreignKey: "id_creator_user",
     as: "TicketCreated"
@@ -73,7 +75,8 @@ Ticket.belongsTo(User, {
     as: "CreatorUser"
 });
 
-//Assigned_User - Ticket
+
+
 User.hasMany(Ticket, {
     foreignKey: "id_assigned_user",
     as: "TicketAssigned"
@@ -83,7 +86,8 @@ Ticket.belongsTo(User, {
     as: "AssignedUser"
 });
 
-//Department - Ticket
+
+
 Department.hasMany(Ticket, {
     foreignKey: "id_department"
 });
@@ -91,7 +95,9 @@ Ticket.belongsTo(Department, {
     foreignKey: "id_department"
 });
 
-//WorkTeam - Ticket
+
+
+
 WorkTeam.hasMany(Ticket, {
     foreignKey: "id_WorkTeam"
 });
@@ -99,15 +105,19 @@ Ticket.belongsTo(WorkTeam, {
     foreignKey: "id_WorkTeam"
 });
 
-//SupportDevice - Ticket
+
+
 SupportDevice.hasMany(Ticket, {
     foreignKey: "id_device"
 });
 Ticket.belongsTo(SupportDevice, {
     foreignKey: "id_device"
-})
+});
 
-//Status - Ticket
+
+
+
+
 StatesTicket.hasMany(Ticket, {
     foreignKey: "id_statusTicket"
 });
@@ -115,13 +125,15 @@ Ticket.belongsTo(StatesTicket, {
     foreignKey: "id_statusTicket"
 });
 
-//Priority - Ticket
+
+
+
 priority.hasMany(Ticket, {
     foreignKey: "id_priority"
 });
 Ticket.belongsTo(priority, {
     foreignKey: "id_priority"
-})
+});
 
 TeamUser.belongsTo(WorkTeam, {
     foreignKey: "id_WorkTeam"
@@ -132,11 +144,5 @@ TeamUser.belongsTo(User, {
 });
 
 export {
-    Rol,
-    Department,
-    User,
-    Specialization,
-    StatesTicket,
-    TeamUser,
-    WorkTeam,
-};
+    Rol,Department,User,Specialization,StatesTicket,TeamUser,WorkTeam,SupportDevice,Support,Ticket
+    };

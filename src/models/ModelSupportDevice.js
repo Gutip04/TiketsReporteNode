@@ -1,30 +1,33 @@
 import { DataTypes } from "sequelize";
 import { conn } from "../config/database.js";
 
-export const SupportDevice = conn.define("SupportDevice" , {
-    id_device:{
+export const SupportDevice = conn.define("SupportDevice", {
+    id_device: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         allowNull: false
     },
-    name:{
+    name: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    description:{
+    description: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    type:{
+    type: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    status:{
+    status: {
         type: DataTypes.STRING,
         allowNull: false
     },
-
-},{
+    id_department: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
+}, {
     timestamps: true
-})
+});

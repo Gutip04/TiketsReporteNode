@@ -1,32 +1,60 @@
 import { SupportDevice } from "../models/ModelSupportDevice.js";
+import { Department } from "../models/ModelDepartment.js";
 
-//Create Supported Device
+// Create Supported Device
 export function CreateDevice(data){
-    return SupportDevice.create(data)
+    return SupportDevice.create(data);
 }
 
-//Get All Supported Devices
-export function GetDevice(data){
-    return SupportDevice.findAll(data)
+// Get All Supported Devices
+export function GetDevice(){
+    return SupportDevice.findAll({
+        attributes: [
+            "id_device",
+            "name",
+            "description",
+            "type",
+            "status"
+        ],
+        include: [
+            {
+                model: Department,
+                attributes: ["name"]
+            }
+        ]
+    });
 }
 
-//Update Supported Device
+// Update Supported Device
 export function UpdateDevice(id, data){
-    return SupportDevice.update(data,{
-        where: {id_device : id}
-    })
+    return SupportDevice.update(data, {
+        where: { id_device: id }
+    });
 }
 
-//Delete Supported Device
+// Delete Supported Device
 export function DeleteDevice(id){
     return SupportDevice.destroy({
-        where: {id_device : id}
-    })
+        where: { id_device: id }
+    });
 }
 
-//Get Supported Device by name
+// Get Supported Device by name
 export function GetDeviceName(name){
     return SupportDevice.findOne({
-        where: {name : name}
-    })
+        where: { name: name },
+        attributes: [
+            "id_device",
+            "name",
+            "description",
+            "type",
+            "status"
+        ],
+        include: [
+            {
+                model: Department,
+                attributes: ["name"]
+            }
+        ]
+    });
 }

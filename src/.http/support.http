@@ -5,8 +5,9 @@ POST http://localhost:3000/api/support
 Content-Type: application/json
 Authorization: Bearer : {{token}}
 {
-    "id_support" : "1",
-    "comment" : "Prueba"
+    "comment": "Prueba de soporte técnico",
+    "id_user": 1,
+    "id_ticket": 1
 }
 
 ###
@@ -27,7 +28,7 @@ PATCH http://localhost:3000/api/support/1
 Content-Type: application/json
 
 {
-    "comment" : "PruebaAprobada"
+    "comment": "PruebaAprobada"
 }
 
 ###

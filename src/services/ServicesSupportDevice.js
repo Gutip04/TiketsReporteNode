@@ -1,27 +1,27 @@
-import { CreateDevice, GetDevice, UpdateDevice, DeleteDevice, GetDeviceName} from "../repositorys/RepositorySupportDevice.js";
+import { CreateDevice, GetDevice, UpdateDevice, DeleteDevice, GetDeviceName } from "../repositorys/RepositorySupportDevice.js";
 
 export function registerSupportDevice(data){
     if(
         !data.name ||
         !data.description ||
         !data.type ||
-        !data.status 
+        !data.status ||
+        !data.id_department
     ){
-        return new Promise.reject(new Error("Incomplete Fields..."));
+        return Promise.reject(new Error("Incomplete Fields..."));
     }
 
-    return CreateDevice(data)
-};
-
+    return CreateDevice(data);
+}
 
 export function listSupportDevice(){
-    return GetDevice()
+    return GetDevice();
 }
 
 
 export function modifySupportDevice(id, data){
     if(!id){
-        return new Promise.reject(new Error("The ID is required..."));
+        return Promise.reject(new Error("The ID is required..."));
     }
 
     return UpdateDevice(id, data);
@@ -30,16 +30,17 @@ export function modifySupportDevice(id, data){
 
 export function removeSupportDevice(id){
     if (!id) {
-            return new Promise.reject(new Error("The ID is required..."))
-        }
+        return Promise.reject(new Error("The ID is required..."));
+    }
     
-        return DeleteDevice(id)
+    return DeleteDevice(id);
 }
+
 
 
 export function searchSupportDevice(name){
     if(!name){
-        return new Promise.reject(new Error("The name is required..."));
+        return Promise.reject(new Error("The name is required..."));
     }
 
     return GetDeviceName(name);

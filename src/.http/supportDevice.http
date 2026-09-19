@@ -3,11 +3,11 @@ POST http://localhost:3000/api/supportDevice
 Content-Type: application/json
 
 {
-    "id_device" : "2",
-    "name" : "Lenovo",
-    "description" : "computador dañado",
-    "type" : "computador",
-    "status" : "Sin arreglo"
+    "name": "Lenovo",
+    "description": "computador dañado",
+    "type": "computador",
+    "status": "Sin arreglo",
+    "id_department": 1
 }
 
 ###
@@ -24,14 +24,16 @@ PATCH http://localhost:3000/api/supportDevice/1
 Content-Type: application/json
 
 {
-    "name" : "Apple"
+    "name": "Apple"
 }
 
 ###
 
+
 ### Delete Support Device By ID
 
 DELETE http://localhost:3000/api/supportDevice/1
+
 
 ###
 
